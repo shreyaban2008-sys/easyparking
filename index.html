@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkEase | Smart Parking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">ParkEase<span>.</span></a>
+    <span class="tagline">Smart parking, simpler visits.</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">SMART PARKING RESERVATION</p>
+      <h1>Your parking spot,<br>reserved in advance.</h1>
+      <p>Choose your hotel, select your time and check parking availability before you arrive.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Find your parking space</h2>
+      <form id="searchForm" class="search-grid">
+        <label>Hotel
+          <select id="hotel">
+            <option value="grand">Grand Palace Hotel</option>
+            <option value="royal">Royal Orchid Hotel</option>
+          </select>
+        </label>
+        <label>Date
+          <input type="date" id="date" required>
+        </label>
+        <label>Arrival time
+          <input type="time" id="start" value="18:00" required>
+        </label>
+        <label>Departure time
+          <input type="time" id="end" value="20:00" required>
+        </label>
+        <button type="submit" class="primary">Check availability</button>
+      </form>
+      <p id="searchMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIVE DEMO BOARD</p>
+          <h2>Parking spaces</h2>
+        </div>
+        <span id="spaceCount" class="count"></span>
+      </div>
+      <div class="legend">
+        <span><i class="dot available"></i> Available</span>
+        <span><i class="dot reserved"></i> Reserved</span>
+        <span><i class="dot selected"></i> Selected</span>
+      </div>
+      <div id="parkingGrid" class="parking-grid"></div>
+      <p id="selectedMessage" class="message" aria-live="polite">Choose an available space.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Reserve your space</h2>
+      <p class="muted">Select a green parking space first.</p>
+      <form id="bookingForm" class="booking-grid">
+        <label>Your name
+          <input id="customerName" type="text" maxlength="60" required placeholder="Enter your name">
+        </label>
+        <label>Vehicle number
+          <input id="vehicle" type="text" maxlength="20" required placeholder="e.g. WB00AB1234">
+        </label>
+        <button class="primary" type="submit">Confirm free reservation</button>
+      </form>
+      <p id="bookingMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PUBLIC STATUS</p>
+          <h2>Reservation board</h2>
+        </div>
+        <span class="count">Privacy protected</span>
+      </div>
+      <p class="muted">Anyone can see which spaces are reserved, but customer names and vehicle numbers are never shown here.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Hotel</th>
+              <th>Date</th>
+              <th>Space</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="reservationList"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>My reservations on this device</h2>
+      <p class="muted">Demo only: your reservations are stored in this browser.</p>
+      <div id="myReservations"></div>
+    </section>
+
+    <p class="footer-note">ParkEase is a student prototype. Hotel listings and bookings are sample data, not real hotel reservations.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
