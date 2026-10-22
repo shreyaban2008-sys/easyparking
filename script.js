@@ -1,3 +1,13 @@
+
+const firebaseConfig = {
+  // Copy your exact Firebase configuration here
+};
+
+// Connect ParkEase to Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+const reservationsRef = database.ref("reservations");
+
 const hotels = {
   grand: {
     name: "Grand Palace Hotel",
