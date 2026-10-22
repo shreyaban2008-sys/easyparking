@@ -299,3 +299,11 @@ th {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.creator-credit {
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+  color: #64748b;
+  font-size: 14px;
+  border-top: 1px solid #e2e8f0;
+}
